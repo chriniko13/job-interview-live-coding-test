@@ -19,7 +19,6 @@ class SecondExercise {
         List<Integer> ticketsIds;
         Set<Integer> coffeeIds;
         List<Person> coworkersAsList;
-        //TODO cyclic reference...
     }
 
     static class Salary {
@@ -86,7 +85,9 @@ class SecondExercise {
         }
     }
 
-    private void print(Object object, StringBuilder sb, Set<Object> objectsVisited) throws IllegalAccessException {
+    private void print(Object object,
+                       StringBuilder sb,
+                       Set<Object> objectsVisited /*Note: in order to eliminate cyclic references*/) throws IllegalAccessException {
 
         if (!objectsVisited.add(object)) {
             return;
