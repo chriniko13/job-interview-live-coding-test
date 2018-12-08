@@ -7,9 +7,11 @@
     <groupId>com.chriniko</groupId>
     <artifactId>job-interview-live-coding-test</artifactId>
     <version>1.0</version>
+    <packaging>jar</packaging>
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -18,10 +20,22 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!-- Jar file entry point -->
+                            <mainClass>com.chriniko.jobinterview.livecoding.test.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
-
-    <packaging>jar</packaging>
 
 
 </project>
